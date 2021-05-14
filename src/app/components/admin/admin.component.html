@@ -1,0 +1,10 @@
+<p>admin works!</p>
+<button>add courses</button>
+<form [formGroup]="courseForm" (ngSubmit)="addCourse()">
+    <label for="courseName">courseName</label>
+    <input id="courseName" formControlName="courseName">
+    <label for="courseDescription">courseName</label>
+    <input id="courseDescription" formControlName="courseDescription">
+    <button class="btn" >Add Corse</button>
+    
+</form>

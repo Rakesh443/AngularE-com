@@ -1,0 +1,15 @@
+.course{
+    background-color: rgb(224, 226, 241);
+    padding: 50px 100px;
+} 
+.box{
+    background-color: white;
+    padding: 10px 20px ;
+}
+
+@media screen and (max-width:600px){
+    .course{
+        background-color: rgb(224, 226, 241);
+        padding: 50px 10px;
+    }
+}
