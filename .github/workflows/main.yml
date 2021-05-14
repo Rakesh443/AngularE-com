@@ -38,7 +38,7 @@ jobs:
       - name: building app
         run: ng build
       - name: deploy
-        run: firebase deploy --token ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANGULARECOM }}
+        run: firebase deploy --token ${{ secrets.FIREBASE_SERVICE_ACCOUNT_NEWWEBSTORE }}
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
