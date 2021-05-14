@@ -1,0 +1,79 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@Rakesh443 
+Rakesh443
+/
+AngularWebMusic
+1
+00
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+AngularWebMusic/.github/workflows/deploy.yml
+@Rakesh443
+Rakesh443 Update deploy.yml
+Latest commit 923767e on Apr 9
+ History
+ 1 contributor
+35 lines (28 sloc)  822 Bytes
+  
+name: Deploy to Google
+
+# Run this workflow every time a new commit pushed to your repository
+on:
+  push:
+    branches: [ Testing ]
+
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: install libraries
+      run: npm install
+      working-directory: ${{env.working-directory}}
+    - name: install firebase
+      run: npm i firebase-tools -g  
+    - name: install angularcli
+      run: npm install -g @angular/cli
+    - name: building app
+      run: ng build
+    - name: deploy
+      run: firebase deploy --token ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ISMARTMUSIC }}
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete
