@@ -34,7 +34,7 @@ jobs:
       - name: install firebase
         run: npm i firebase-tools 
       - name: install angularcli
-        run: npm install -g @angular/cli
+        run: npm install @angular/cli
       - name: building app
         run: ng build
       - name: deploy
